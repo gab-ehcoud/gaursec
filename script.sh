@@ -20,7 +20,7 @@ echo "	"
 target="${file%.*}"
 mkdir "output_$target";
 
-echo -e "\e[93mEnumerating all subdomains of $file, this may take some time..\e[0m"
+echo -e "\e[93mEnumerating all subdomains of $file"
 
 for domain in $(cat $file); do
     echo -e "\e[34m[+]\e[0mChecking $domain"
