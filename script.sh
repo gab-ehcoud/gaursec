@@ -3,8 +3,8 @@
 file=$1
 # '-z' if domain param is empty
 if [[ -z $file ]]; then
-	echo -e "Usage: ./recon.sh <domain.com>"
-	exit 1
+    echo -e "Usage: ./recon.sh <domain.com>"
+    exit 1
 fi
 
 echo -e "\e[91m[-] This script will gather the following information for you\e[0m"
@@ -13,7 +13,7 @@ echo -e "\e[34m[+]\e[0mAll Live domains in $file"
 echo -e "\e[34m[+]\e[0mAll URLs/Links in $file"
 echo -e "\e[34m[+]\e[0mAll JS files in $file"
 echo "	"
-echo -e "\e[41m This will take some time. Have a cup of coffee \e[0m"
+echo -e "\e[41m This will take some time. Have a cup of coffee "
 echo "	"
 echo "	"
 
@@ -23,7 +23,7 @@ mkdir "output_$target";
 
 for domain in $(cat $file); do
     echo -e "\e[34m[+]\e[0mChecking $domain"
-    echo -e "\e[93mEnumerating subdomains with SubFinder...\e[0m"# 
+    echo -e "\e[93mEnumerating subdomains with SubFinder...\e[0m"#
     subfinder -d $domain -silent >> output_$target/all_subdomains.txt | sort -u
     echo -e "[- Task Done -] \e[92mAll domains of $domain are saved in all-subdomains.txt\e[0m"
 done
